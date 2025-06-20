@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Injection</title>
+</head>
+<body>
+<h5>Try Enter <span style="color: blue">' OR '1'='1 </span> and it will return all data</h5>
+<!-- templates/get_user.html -->
+<form method="get" action="{% url 'get_user' %}">
+    <label>Username:</label>
+    <input type="text" name="username" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if result == "not_found" %}
+    <p>User not found.</p>
+{% elif result %}
+    <p>Users found:</p>
+    <ul>
+        {% for user in result %}
+            <li>
+                ID: {{ user.0 }} | Username: {{ user.1 }} | Email: {{ user.2 }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+</body>
+</html>
