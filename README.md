@@ -12,7 +12,7 @@ This project is a deliberately insecure Django web application designed to **dem
 | ✅ SQL Injection            | ✅ Built |
 | ❌ Cross-Site Scripting (XSS) | Coming Soon |
 | ❌ Command Injection        | Coming Soon |
-| ❌ CSRF (Cross-Site Request Forgery) | Coming Soon |
+| ✅ CSRF (Cross-Site Request Forgery) | ✅ Built |
 | ❌ Insecure Direct Object Reference (IDOR) | Coming Soon |
 | ❌ Path Traversal           | Coming Soon |
 | ❌ Open Redirects           | Coming Soon |
@@ -64,6 +64,8 @@ security-problems/
 │   └── templates/
 │       └── ZeroSecurity/
 │           └── get_user.html
+│           └── transfer.html
+│           └── evil.html
 ├── db.sqlite3               # SQLite database
 ├── manage.py
 ├── security_problems/      # Project settings and URLs
@@ -76,8 +78,7 @@ security-problems/
 
 We will expand the app with more security flaws like:
 - Persistent & Reflected XSS
-- Remote Command Execution (RCE)
-- CSRF-protected forms
+- Remote Command Execution (RCE)=
 - Broken Access Control examples (IDOR)
 - Path traversal for file access
 - Redirect-based phishing tricks
