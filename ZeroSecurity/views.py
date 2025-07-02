@@ -40,6 +40,7 @@ def get_user(request):
     return render(request, 'ZeroSecurity/get_user.html', {'result': result})
 
 
+# This view can be for delete your account, but I used transfer for reality
 def transfer(request):
     if request.method == "POST":
         amount = request.POST.get("amount")
