@@ -107,7 +107,7 @@ We will expand the app with more security flaws like:
 
 ## 👨‍💻 Author
 
-**You**, a passionate security learner.  
+**Ahmed Shehta**, a passionate security learner.  
 Want to contribute? Feel free to fork and expand the project.
 
 ---
