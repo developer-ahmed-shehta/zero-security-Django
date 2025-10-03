@@ -1,36 +1,36 @@
 
-# 🛡️ Django Vulnerable Web App (Educational Purposes Only)
+# Django Vulnerable Web App (Educational Purposes Only)
 
 This project is a deliberately insecure Django web application designed to **demonstrate common web vulnerabilities**. It's ideal for **security training, ethical hacking, CTF practice, and academic use**.
 
 ---
 
-## 📚 Vulnerabilities Demonstrated
+##  Vulnerabilities Demonstrated
 
 | Vulnerability               | Status  |
 |----------------------------|---------|
-| ✅ SQL Injection            | ✅ Built |
-| ❌ Cross-Site Scripting (XSS) | Coming Soon |
-| ❌ Command Injection        | Coming Soon |
-| ✅ CSRF (Cross-Site Request Forgery) | ✅ Built |
-| ❌ Insecure Direct Object Reference (IDOR) | Coming Soon |
-| ❌ Path Traversal           | Coming Soon |
-| ❌ Open Redirects           | Coming Soon |
-| ❌ Insecure Deserialization | Coming Soon |
+|  SQL Injection            | ✅ Built |
+|  Cross-Site Scripting (XSS) | Coming Soon |
+|  Command Injection        | Coming Soon |
+|  CSRF (Cross-Site Request Forgery) | ✅ Built |
+|  Insecure Direct Object Reference (IDOR) | Coming Soon |
+|  Path Traversal           | Coming Soon |
+|  Open Redirects           | Coming Soon |
+|  Insecure Deserialization | Coming Soon |
 
 ---
 
-## 🧪 Example: SQL Injection
+##  Example: SQL Injection
 
 We use Django's built-in `auth_user` table to demonstrate SQL Injection.
 
-### 🔓 Vulnerable Endpoint
+###  Vulnerable Endpoint
 
 ```http
 GET /get_user/?username=' OR '1'='1
 ```
 
-### 🧨 Raw Query Behind the Scenes
+###  Raw Query Behind the Scenes
 
 ```python
 query = f"SELECT * FROM auth_user WHERE username = '{username}'"
@@ -39,16 +39,16 @@ query = f"SELECT * FROM auth_user WHERE username = '{username}'"
 > This allows attackers to bypass authentication and extract user data.
 
 ---
-## 🧪 Example: CSRF (Cross-Site Request Forgery)
+##  Example: CSRF (Cross-Site Request Forgery)
 
 We use Django's form submission to demonstrate CSRF vulnerabilities.
 
-### 🔓 Vulnerable Endpoint
+###  Vulnerable Endpoint
 ```http
 POST /transfer/
 amount=1000&to_account=attacker
 ```
-🧨 Malicious Form Behind the Scenes
+ Malicious Form Behind the Scenes
 ```
     <form method="POST" action="/transfer/">
         <!-- INSECURE: No CSRF protection -->
@@ -59,7 +59,7 @@ amount=1000&to_account=attacker
 ```
 
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework**: Django 5.2.3
 - **Database**: SQLite (default)
@@ -67,7 +67,7 @@ amount=1000&to_account=attacker
 
 ---
 
-## 🚫 Warning
+##  Warning
 
 > ⚠️ **This application is intentionally insecure**.  
 > Use **only in safe, isolated environments** such as virtual machines, Docker containers, or offline labs.  
@@ -75,7 +75,7 @@ amount=1000&to_account=attacker
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 security-problems/
@@ -93,7 +93,7 @@ security-problems/
 
 ---
 
-## 🚀 Coming Soon
+##  Coming Soon
 
 We will expand the app with more security flaws like:
 - Persistent & Reflected XSS
@@ -105,9 +105,10 @@ We will expand the app with more security flaws like:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Ahmed Shehta**, a passionate security learner.  
 Want to contribute? Feel free to fork and expand the project.
 
 ---
+
