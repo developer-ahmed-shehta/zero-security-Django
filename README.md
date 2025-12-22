@@ -17,6 +17,7 @@ This project is a deliberately insecure Django web application designed to **dem
 |  Path Traversal           | Coming Soon |
 |  Open Redirects           | Coming Soon |
 |  Insecure Deserialization | Coming Soon |
+|  Rate Limiting            | Coming Soon |
 
 ---
 
@@ -111,4 +112,5 @@ We will expand the app with more security flaws like:
 Want to contribute? Feel free to fork and expand the project.
 
 ---
+
 
