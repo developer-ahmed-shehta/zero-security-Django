@@ -19,6 +19,7 @@ This project is a deliberately insecure Django web application designed to **dem
 |  Open Redirects           | Coming Soon |
 |  Insecure Deserialization | Coming Soon |
 |  Rate Limiting (DDOS)     | Coming Soon |
+|  Social Engineering       | Coming Soon |
 
 ---
 
@@ -113,6 +114,7 @@ We will expand the app with more security flaws like:
 Want to contribute? Feel free to fork and expand the project.
 
 ---
+
 
 
 
