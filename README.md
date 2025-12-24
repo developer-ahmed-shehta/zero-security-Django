@@ -9,17 +9,17 @@ This project is a deliberately insecure Django web application designed to **dem
 
 | Vulnerability               | Status  |
 |----------------------------|---------|
-|  SQL Injection            | ✅ Built |
-|  Cross-Site Scripting (XSS) | Coming Soon |
-|  Command Injection        | Coming Soon |
-|  CSRF (Cross-Site Request Forgery) | ✅ Built |
-|  CORS (Cross-Origin REsource Sharing) | ✅ Built |
+|  SQL Injection                           | ✅ Built    |
+|  Cross-Site Scripting (XSS)              | Coming Soon |
+|  Command Injection                       | Coming Soon |
+|  CSRF (Cross-Site Request Forgery)       | ✅ Built    |
+|  CORS (Cross-Origin REsource Sharing)    | ✅ Built    |
 |  Insecure Direct Object Reference (IDOR) | Coming Soon |
-|  Path Traversal           | Coming Soon |
-|  Open Redirects           | Coming Soon |
-|  Insecure Deserialization | Coming Soon |
-|  Rate Limiting (DDOS)     | Coming Soon |
-|  Social Engineering       | Coming Soon |
+|  Path Traversal                          | Coming Soon |
+|  Open Redirects                          | Coming Soon |
+|  Insecure Deserialization                | Coming Soon |
+|  Rate Limiting (DDOS)                    | Coming Soon |
+|  Social Engineering ( phishing)          | Coming Soon |
 
 ---
 
@@ -114,6 +114,7 @@ We will expand the app with more security flaws like:
 Want to contribute? Feel free to fork and expand the project.
 
 ---
+
 
 
 
