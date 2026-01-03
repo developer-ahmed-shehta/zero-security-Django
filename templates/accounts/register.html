@@ -1,0 +1,17 @@
+<h1>Register</h1>
+
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="password1" name="password1" placeholder="Password" required><br>
+    <input type="password2" name="password2" placeholder="Password" required><br>
+
+    <button type="submit">Register</button>
+</form>
+
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}

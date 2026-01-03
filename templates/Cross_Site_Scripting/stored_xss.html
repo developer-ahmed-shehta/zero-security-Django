@@ -1,0 +1,17 @@
+<!-- templates/xss/stored_xss.html -->
+
+<h2>Stored XSS Demo</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <input name="username" placeholder="Username">
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Post</button>
+</form>
+
+<hr>
+
+{% for c in comments %}
+  <p><b>{{ c.username }}</b>:</p>
+  {{ c.message|safe }}   <!-- ❌ INTENTIONAL XSS -->
+{% endfor %}

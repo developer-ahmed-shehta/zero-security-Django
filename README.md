@@ -10,10 +10,10 @@ This project is a deliberately insecure Django web application designed to **dem
 | Vulnerability               | Status  |
 |----------------------------|---------|
 |  SQL Injection                           | ✅ Built    |
-|  Cross-Site Scripting (XSS)              | Coming Soon |
+|  Cross-Site Scripting (XSS)              | ✅ Built    |
 |  Command Injection                       | Coming Soon |
 |  CSRF (Cross-Site Request Forgery)       | ✅ Built    |
-|  CORS (Cross-Origin REsource Sharing)    | ✅ Built    |
+|  CORS (Cross-Origin Resource Sharing)    | Coming Soo  |
 |  Insecure Direct Object Reference (IDOR) | Coming Soon |
 |  Path Traversal                          | Coming Soon |
 |  Open Redirects                          | Coming Soon |
@@ -22,46 +22,8 @@ This project is a deliberately insecure Django web application designed to **dem
 |  Social Engineering ( phishing)          | Coming Soon |
 
 ---
-
-##  Example: SQL Injection
-
-We use Django's built-in `auth_user` table to demonstrate SQL Injection.
-
-###  Vulnerable Endpoint
-
-```http
-GET /get_user/?username=' OR '1'='1
-```
-
-###  Raw Query Behind the Scenes
-
-```python
-query = f"SELECT * FROM auth_user WHERE username = '{username}'"
-```
-
-> This allows attackers to bypass authentication and extract user data.
-
+## for more detail look at document Folder
 ---
-##  Example: CSRF (Cross-Site Request Forgery)
-
-We use Django's form submission to demonstrate CSRF vulnerabilities.
-
-###  Vulnerable Endpoint
-```http
-POST /transfer/
-amount=1000&to_account=attacker
-```
- Malicious Form Behind the Scenes
-```
-    <form method="POST" action="/transfer/">
-        <!-- INSECURE: No CSRF protection -->
-        <input type="text" name="to_account" placeholder="Recipient's Account" required>
-        <input type="number" name="amount" placeholder="Amount ($)" required>
-        <button type="submit">Transfer Money</button>
-    </form>
-```
-
-
 ##  Tech Stack
 
 - **Framework**: Django 5.2.3
@@ -88,6 +50,9 @@ security-problems/
 │           └── get_user.html
 │           └── transfer.html
 │           └── evil.html
+├── accounts/ 
+├── Cross_Site_Scripting/ 
+├── templates/
 ├── db.sqlite3               # SQLite database
 ├── manage.py
 ├── security_problems/      # Project settings and URLs
